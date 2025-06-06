@@ -41,7 +41,4 @@
 - Merge rebased `feature1` into `main` (fast-forward if possible)
 - Delete feature branches (`feature1` and `feature2`) to tidy up
 
----
 
-> **Optional:**  
-> Ask for help with conflict resolution, advanced interactive rebase commands, or cherry-pick strategies.
