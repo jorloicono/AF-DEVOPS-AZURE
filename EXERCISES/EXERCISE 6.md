@@ -6,9 +6,9 @@
 - **Terraform** installed → [Download Terraform](https://www.terraform.io/downloads.html)
 - **Azure CLI** installed → [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - Login to Azure:
-  ```bash
+  
   az login
-````
+
 
 ## Step 1: Create a Project Directory
 
@@ -69,7 +69,7 @@ output "container_name" {
 
 ---
 
-## 🛠️ Step 3: Initialize Terraform
+## Step 3: Initialize Terraform
 
 ```bash
 terraform init
