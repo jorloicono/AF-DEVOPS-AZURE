@@ -1,6 +1,6 @@
-# 🌩️ Terraform on Azure: Create Blob Storage (Step-by-Step Guide)
+# Terraform on Azure: Create Blob Storage 
 
-## ✅ Prerequisites
+## Prerequisites
 
 - An active **Azure subscription**
 - **Terraform** installed → [Download Terraform](https://www.terraform.io/downloads.html)
@@ -10,7 +10,7 @@
   az login
 ````
 
-## 📁 Step 1: Create a Project Directory
+## Step 1: Create a Project Directory
 
 ```bash
 mkdir terraform-azure-blob
@@ -18,7 +18,7 @@ cd terraform-azure-blob
 ```
 
 
-## 📄 Step 2: Create Terraform Configuration Files
+## Step 2: Create Terraform Configuration Files
 
 ### 1. `main.tf`
 
@@ -77,7 +77,7 @@ terraform init
 
 ---
 
-## 🔍 Step 4: Preview the Plan
+## Step 4: Preview the Plan
 
 ```bash
 terraform plan
@@ -85,7 +85,7 @@ terraform plan
 
 ---
 
-## 🚀 Step 5: Apply the Configuration
+## Step 5: Apply the Configuration
 
 ```bash
 terraform apply
@@ -95,7 +95,7 @@ Type `yes` when prompted.
 
 ---
 
-## 🧹 Step 6: Destroy the Resources
+## Step 6: Destroy the Resources
 
 ```bash
 terraform destroy
