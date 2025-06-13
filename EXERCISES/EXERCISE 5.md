@@ -103,7 +103,9 @@ jobs:
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: <YOUR_A_
+        app-name: <YOUR_APP_NAME>  # e.g. azure-dotnet-app
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ./publish
 
 ```
 
