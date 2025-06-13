@@ -33,8 +33,6 @@ This guide will help you deploy a web application (Node.js, Python, .NET, etc.) 
 
 ## Step 3: Add Your Application Code
 
-Here is your content formatted in Markdown (`.md`) with code blocks for both files:
-
 # Azure .NET Minimal API App
 
 ## Program.cs
@@ -73,13 +71,12 @@ app.Run();
 Create this file in your repo:
 
 ```yaml
-# .github/workflows/azure-webapp-deploy.yml
-name: Deploy Node.js app to Azure Web App
+name: Deploy .NET app to Azure Web App
 
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # o tu rama principal
 
 jobs:
   build-and-deploy:
@@ -89,23 +86,25 @@ jobs:
     - name: 'Checkout code'
       uses: actions/checkout@v3
 
-    - name: 'Set up Node.js'
-      uses: actions/setup-node@v3
+    - name: 'Set up .NET'
+      uses: actions/setup-dotnet@v4
       with:
-        node-version: '18.x'
+        dotnet-version: '8.0.x'  # O la versión que estés usando
 
-    - name: 'Install dependencies'
-      run: npm install
+    - name: 'Restore dependencies'
+      run: dotnet restore
 
     - name: 'Build app'
-      run: npm run build || echo "no build step"
+      run: dotnet build --configuration Release
+
+    - name: 'Publish app'
+      run: dotnet publish --configuration Release --output ./publish
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: <YOUR_APP_NAME>              # e.g. my-awesome-app
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: .
+        app-name: <YOUR_A_
+
 ```
 
 Replace `<YOUR_APP_NAME>` with the **name of your Azure Web App**.
