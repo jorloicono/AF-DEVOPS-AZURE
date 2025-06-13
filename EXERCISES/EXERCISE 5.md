@@ -33,30 +33,37 @@ This guide will help you deploy a web application (Node.js, Python, .NET, etc.) 
 
 ## Step 3: Add Your Application Code
 
-Ensure your application is in the root or specified folder.
-Here's an example for a basic **Node.js app**:
+Here is your content formatted in Markdown (`.md`) with code blocks for both files:
 
-```js
-// index.js
-const express = require('express');
-const app = express();
-app.get('/', (req, res) => res.send('Hello from Azure!'));
-app.listen(process.env.PORT || 3000);
+# Azure .NET Minimal API App
+
+## Program.cs
+
+```csharp
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello from Azure!");
+
+app.Run();
 ````
 
-```json
-// package.json
-{
-  "name": "azure-node-app",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
-}
+## AzureDotNetApp.csproj
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
 ```
 
 ---
